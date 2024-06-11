@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script>
+    const root = document.getElementById(`root`);
+
+    const tagComponent = (tag, textNode) => {
+      return `<${tag}>${textNode}</${tag}>`;
+    };
+
+    const app = () => {
+      return `
+            ${tagComponent(`h1`, `ㅎ_ㅇ`)}
+            ${tagComponent(`h2`, `ㅎ_ㅇ`)}
+            ${tagComponent(`h3`, `ㅎ_ㅇ`)}
+            `;
+    };
+
+    const render = () => {
+      root.innerHTML = app();
+    };
+
+    render();
+  </script>
+</html>
