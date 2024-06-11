@@ -1,4 +1,6 @@
 const formatHTML = (language) => {
+  language = language ?? null ?? `KOR`;
+  // language ??= `KOR`;
   const htmlData = {
     titleOne: `이종수`,
     titleTwo: `Lee`,
@@ -28,4 +30,4 @@ const formatHTML = (language) => {
   return html;
 };
 
-console.log(formatHTML(`KOR`));
+console.log(formatHTML());
