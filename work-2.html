@@ -34,19 +34,26 @@
       "황재민",
     ];
 
+    const test = () => {
+      alert(`테스트`);
+    };
+
     const tagComponent = (tag, textNode, ...att) => {
-      //   const { att } = att;
-      console.log(att);
-      return `<${tag}${att.map((att) => att)}="">${textNode}</${tag}>`;
+      return `<${tag} ${att.map((att) => att).join("")}>${textNode}</${tag}>`;
     };
 
     const app = () => {
-      //         ${names.map((name) => tagComponent(`h1`, name)).join("")}
       return `
             ${names
               .map((name) => {
                 if (name == `이종수`) {
-                  return tagComponent(`h1`, name, `style,color:red;`, `class`);
+                  return tagComponent(
+                    `h1`,
+                    name,
+                    `style="color:aqua; width:fit-content;"`,
+                    `class="kim"`,
+                    `onclick="test()"`
+                  );
                 } else {
                   return tagComponent(`h6`, name);
                 }
